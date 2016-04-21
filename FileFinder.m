@@ -43,7 +43,7 @@ classdef FileFinder
                                                        %#   that are not '.' or '..'
             for iDir = find(validIndex)                  %# Loop over valid subdirectories
                 nextDir = fullfile(dirName,subDirs{iDir});    %# Get the subdirectory path
-                fileList = [fileList; FileFinder.getAllFiles(nextDir)];  %# Recursively call getAllFiles
+                fileList = [fileList; FileFinder.getAllFilesRecursive(nextDir)];  %# Recursively call getAllFiles
             end
         end
         
